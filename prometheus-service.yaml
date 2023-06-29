@@ -9,7 +9,7 @@ metadata:
   
 spec:
   selector:
-    app: springboot-server
+    app: prometheus-server
   ports:
   - protocol: TCP
     port: 8080
