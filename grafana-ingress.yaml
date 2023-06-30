@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: graf-ingress
+  namespace: monitoring
+spec:
+  ingressClassName: haproxy
+  rules:
+  - host: "grafana.jnlab-clk.demo"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: prometheus-service
+            port:
+              number: 8080
